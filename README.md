@@ -63,3 +63,6 @@ print("特征名：", tfidf_feature_names)
 <img src="https://github.com/LZY6888/LZY1/blob/main/image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-04-08%20181002.png" width="500" alt="代码截图">
 
 ## 4.样本平衡处理
+<img src="https://github.com/LZY6888/LZY1/blob/main/image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-04-08%20181123.png" width="500" alt="代码截图">
+
+## 5.增加模型评估指标
