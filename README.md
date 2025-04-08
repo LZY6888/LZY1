@@ -1,5 +1,5 @@
 # 代码核心功能说明
-# # 1.get_words() 函数：
+## 1.get_words() 函数：
 
 ```python
 def get_words(filename):
