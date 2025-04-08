@@ -60,6 +60,6 @@ print("特征名：", tfidf_feature_names)
 ```
 #### 使用 TfidfVectorizer 提取文本的 TF-IDF 特征。
 #### 和高频词特征一样，使用 toarray() 和 get_feature_names_out() 查看特征矩阵和特征名称。
-<img src="https://github.com/LZY6888/LZY1/blob/main/image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-04-08%20181002.png" width="200" alt="代码截图">
+<img src="https://github.com/LZY6888/LZY1/blob/main/image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-04-08%20181002.png" width="500" alt="代码截图">
 
 ## 4.样本平衡处理
