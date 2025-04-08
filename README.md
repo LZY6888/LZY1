@@ -20,3 +20,43 @@ all_words = []
 ### 分词：利用 jieba.cut() 对每一行文本进行分词处理。
 ### 过滤长度为1的词：通过 filter() 过滤掉长度为1的词，这些词对分类任务没有太大作用。
 ### 返回分词结果：将处理后的词汇（即词列表）返回
+## 2.get_top_words() 函数：
+
+```python
+def get_top_words(top_num):
+    """遍历邮件建立词库后返回出现次数最多的词"""
+    filename_list = ['邮件_files/{}.txt'.format(i) for i in range(151)]
+    # 遍历邮件建立词库
+    for filename in filename_list:
+        all_words.append(get_words(filename))
+    # itertools.chain()把all_words内的所有列表组合成一个列表
+    # collections.Counter()统计词个数
+    freq = Counter(chain(*all_words))
+    return [i[0] for i in freq.most_common(top_num)]
+top_words = get_top_words(100)
+```
+### 该函数用于构建一个包含文本数据中出现次数最多的词的词汇表：
+### 读取文件：通过文件名列表 filename_list 来读取多个文件（邮件文件）。
+### 提取所有词汇：对于每个文件，调用 get_words() 来提取词汇。
+### 统计词频：通过 itertools.chain(*all_words) 将多个文件的词汇合并为一个列表，然后使用 collections.Counter 来统计各个词的频率。
+### 返回词频最高的词：返回前 top_num 个出现次数最多的词。
+## 3.优化特征选择方法
+#### 提取高频词特征
+```python
+count_features, count_feature_names = feature_extraction(documents, method='count')
+print("高频词特征矩阵：")
+print(count_features.toarray())
+print("特征名：", count_feature_names)
+```
+#### 使用 CountVectorizer 提取文本的高频词特征。
+#### toarray() 将稀疏矩阵转换为数组，便于查看。
+#### get_feature_names_out() 返回提取的特征名称（即所有被识别的词）。
+### 提取TF-IDF特征
+```python
+tfidf_features, tfidf_feature_names = feature_extraction(documents, method='tfidf')
+print("\nTF-IDF特征矩阵：")
+print(tfidf_features.toarray())
+print("特征名：", tfidf_feature_names)
+```
+#### 使用 TfidfVectorizer 提取文本的 TF-IDF 特征。
+#### 和高频词特征一样，使用 toarray() 和 get_feature_names_out() 查看特征矩阵和特征名称。
