@@ -1,5 +1,7 @@
 # 代码核心功能说明
-###1.get_words() 函数：
+# # 1.get_words() 函数：
+
+```python
 def get_words(filename):
     words = []
     with open(filename, 'r', encoding='utf-8') as fr:
