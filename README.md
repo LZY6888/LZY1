@@ -40,7 +40,7 @@ top_words = get_top_words(100)
 #### 统计词频：通过 itertools.chain(*all_words) 将多个文件的词汇合并为一个列表，然后使用 collections.Counter 来统计各个词的频率。
 
 ## 3.优化特征选择方法
-#### 提取高频词特征
+### 提取高频词特征
 ```python
 count_features, count_feature_names = feature_extraction(documents, method='count')
 print("高频词特征矩阵：")
@@ -50,6 +50,7 @@ print("特征名：", count_feature_names)
 #### 使用 CountVectorizer 提取文本的高频词特征。
 #### toarray() 将稀疏矩阵转换为数组，便于查看。
 #### get_feature_names_out() 返回提取的特征名称（即所有被识别的词）。
+
 ### 提取TF-IDF特征
 ```python
 tfidf_features, tfidf_feature_names = feature_extraction(documents, method='tfidf')
@@ -59,3 +60,5 @@ print("特征名：", tfidf_feature_names)
 ```
 #### 使用 TfidfVectorizer 提取文本的 TF-IDF 特征。
 #### 和高频词特征一样，使用 toarray() 和 get_feature_names_out() 查看特征矩阵和特征名称。
+
+## 4.样本平衡处理
